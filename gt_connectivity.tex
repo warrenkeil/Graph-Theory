@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{pgf,tikz,tikzscale} 
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{tkz-berge}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{enumerate}	
+\usepackage{graphicx,lipsum,pgfplots} 
+\usepackage{amsmath, amsthm}                 
+\usepackage[top=1in,bottom=1in, left=1in, right=1in] {geometry}  
+\usepackage{fancyhdr}       
+\usepackage{blkarray}
+
+
+\pagestyle{fancy}              
+\lhead{Math 5563 \newline Graph Theory \newline
+Connectivity Invariance Proof}   
+\rhead{Warren Keil}
+
+
+
+
+
+
+
+\begin{document}
+\setlength{\parindent}{0cm}   %%%%%%%% KEEP THIS  for block style paragraphs. 
+
+
+
+%\textbf{11a.}  Suppose \(G\) is a graph on \(n\leq5\) vertices such that \(G\) is not coplanar. Prove that \(G=K_5\) or \(G=K_5^c\). 
+
+
+%\vspace{3mm}
+%\textit{Proof.} Let \(G\) be a graph on \(n\leq5\) vertices such that \(G\) is not coplanar. 
+
+\textbf{1.} Prove \(\kappa(G)\) is graph invariant. 
+
+\vspace{3mm}
+
+\textit{Proof.} Let \(G=(V,E)\) and \(H=(V',E')\) be simple graphs such that \(G \cong H\). Let \(\kappa(G)\) be the connectivity of \(G\). Then \(\kappa(G)\) equals some integer \(k\) where \(k\) is the minimum number of vertices in any vertex cut of \(G\). Let \(S\) be a minimum vertex cut with \(k\) vertices. Then \(G-S\) is disconnected. Let \( S' = \{ f(u) : u \in S\}\). (First we will show that \(S'\) is a disconnecting set for \(H\). Then we will show that it is a minimum disconnecting set). 
+
+
+\vspace{3mm}
+{\color{red}  I tried to start the proof exactly as i did in class. Here is where I started re-wording things, and fixing errors in the way I stated things }
+\vspace{3mm}
+
+
+To show that \(H-S'\) is disconnected, first let vertices \(a\) and \(b\) live in different components of \(G-S\). Then notice that since \(a \) and \(b\) are not in \(S\), then \(f(a) \) and \(f(b)\) are guaranteed to be in \(H-S'\). To show these vertices \(f(a) \) and \(f(b)\) are disconnected in \(H-S'\), suppose there exists some path of length \(n\) from \(f(a)\) to \(f(b)\). Then we can label the edges in this path as \(p=[ \{f(a),f(v_1)\}, \{f(v_1),f(v_2)\}, \ldots \{f(v_{n-2}),f(b)\}] \). Then, this is true if and only if there exists some path in \(G-S\) called \(\hat p = [\{a,v_1\},\{v_1,v_2\},\ldots \{v_{n-2}, b\} ] \) \(\rightarrow\!\leftarrow\) But this cannot happen since we assumed that \(a\) and \(b\) were vertices in different components of \(G-S\). Thus \(S'\) is a disconnecting set for \(H\). 
+
+\vspace{2mm} 
+To show that this is a smallest disconnecting set, suppose there is a smaller disconnecting set for \(H\) called \(T'\) such that \( |T'| < |S'|\). Then \(H - T'\) is disconnected. Let \(T = \{u : f(u) \in T'\}\). Now let \(f(a)\) and \(f(b)\) be in different components of \(H-T'\). Then with the same argument used above, we know that \(a\) and \(b\) in \(G-T\) have to be in different components of \(G-T\). Thus \(G-T\) is disconnected. Thus \(T\) is a disconnecting set for \(G\). And since \(f\) is a bijection, then the number of elements of \(T'\) equals the number of elements of \(T\). And since \(|T'| < |S'| \Rightarrow |T| <|S|\). \(\rightarrow\!\leftarrow\) But this surely cannot happen since we assumed that \(S\) is a minimum disconnecting set for \(G\). Thus a smaller disconnecting set cannot exist. Therefore \(S'\) is a smallest disconnecting set for \(H\). And since \(|S'| =|S|=k\), then \(\kappa(H) = k\). 
+
+\(\therefore \kappa(G) \) is a graph invariant
+
+\begin{flushright}
+\(\blacksquare\)
+\end{flushright}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

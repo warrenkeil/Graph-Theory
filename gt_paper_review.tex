@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{pgf,tikz,tikzscale} 
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{enumerate}	
+\usepackage[makeroom]{cancel}
+\usepackage{graphicx,lipsum,pgfplots} 
+\usepackage{amsmath, amsthm}                 
+\usepackage[top=1in,bottom=1in, left=1in, right=1in] {geometry}  
+\usepackage{fancyhdr}       
+
+
+
+\pagestyle{fancy}              
+\lhead{Math 5563 \newline Graph Theory }   
+\rhead{Warren Keil}
+
+
+
+
+
+
+\linespread{1.5}
+\begin{document}
+\setlength{\parindent}{8mm}   %%%%%% KEEP 0mm  for block style para.   8mm for regular para
+
+
+\text{ } 
+\vspace{15mm} 
+
+\thispagestyle{empty}
+
+{\huge
+ \centerline{Journal Article Review: }
+ \centerline{Highway Games on Weakly Cyclic Graphs}
+\centerline{Warren Keil } 
+\centerline{October 3, 2018} 
+}
+
+\vspace{39mm}
+
+
+
+
+
+
+%\vfill
+\section{Introduction} 
+
+%\begin{multicols}{2}
+ In this journal article review, I will analyze and explain a recent article in the European Journal of Operational Research titled, \textit{Highway Games on Weakly Cyclic Graphs} \cite{high}. In this paper, the main topic of concern is a type of graph theory problem called highway games. A highway game is a type of optimization problem that can be entirely represented by a weighted graph. Each of the vertices of the graph represent entry and exit locations and the edges of the graph have costs attributed to them. The game is then defined by having a set of multiple \textit{players}, each of which has a starting and ending vertex. The "players" are actually just requirements that a path exists between each set of each player's vertices. The problem then becomes, which is the best set of weighted edges to select so that every player reaches their destination while minimizing the costs. It should also be noted that this type of game is called a cooperative cost game since the cost function of the game consists of the sum of the individual costs of the players.
+ 
+ The researchers in aforementioned paper \cite{high} studied highway games on weakly cyclic graphs. Weakly cyclic graphs are defined as connected graph that possess the property that every edge is contained in at most, one cycle. This implies that there may be multiple paths between vertices but it also reduce the extremely complicated cases since each edge can only be in one or less cycles.
+ 
+ 
+  Next, the authors talk about the concavity of the weakly cyclic graphs and prove a very interesting theorem. To talk about this we first need to introduce the idea of a coalition. Given a highway game and a set of players, a coalition is an optimal solution to a subset of players. Thus, it is the cheapest total cost of the edges that satisfy the entry the path requirements of every player in the coalition. Next, we can talk about the concavity of a cooperative cost game. A cooperative cost game is called concave if for any coalition in a game, the incentives to join that coalition increase as the number of players in the coalition increases. The authors then extended this definition to apply specifically to highways games. They defined a graph to be highway game concave if "for any set of players and weighted edges, the corresponding highway game is also concave." \cite{high}. They also defined a graph to be weakly triangular if a graph is weakly cyclic and also with the property that if any cycle exists in the graph, then it is isomorphic to \(C_3\). Using these definitions, the authors then prove a very interesting theorem that a graph is highway game concave if and only if it weakly triangular. 
+
+
+
+\section{Results}
+The formal definition of a highway problem is 
+\[
+\Gamma = (N,G,\{s_i\}_{i\in N} , \{t_i\}_{i\in N} ,w)
+\]
+where \(N\) is a nonempty finite set of players, \(G\) is a graph, and \(s\) and \(i\) are the required paths written as sequences indexed by \(N\), and \(w\) is the cost function of the edges. So a coalition of \(S\) players is an optimal solution to this problem when subsetting \(S\) of the \(N\) players. 
+
+Next, researchers go on to define a short lemma before going on to introduce their main theorem that \textit{A connected graph G is HG-concave if and only if it is weakly triangular}. They then show and prove multiple other smaller theorems and lemmas that result from highway games on weakly cyclic graphs. Some of these proofs are somewhat technical in nature and so we will not present them here. 
+
+\section{Relation to Lecture}. 
+
+The main results from this paper relate to some of the material we talked about in class, mainly Euler paths and circuits. Both Euler paths and highway games both have requirement about have edges contained in the paths of a graph. The main differences lie in the fact that Euler paths problems are mainly concerned about does such a path exist while highway games are concerned with finding the least cost network of paths that satisfy of player in the system. As with most problems in graph theory, these problems are highly applicable to real world problems and the theoretical optimal solution is usually not known. Furthermore, the complexity of these problems are usually high making research on heuristics and subsets of the general problem such as the one in this paper very valuable. 
+
+% \end{multicols}
+ 
+ %%%%%%%%%%%%%%%%%%%   Bibli 
+\newpage
+ 
+\onecolumn  
+\begin{thebibliography}{9}
+
+\bibitem{high}
+Peter Borm, Baris Cifti, Herber Hamers. 2015. 
+\textit{Highway Games on Weakly Cyclic Graphs}. 
+Elsevier Journal of Operational Research, \texttt{www.elsevier.com/locate/ejor}
+
+\bibitem{merris}
+Russell Merris
+\textit{Graph Theory}. 2001.
+Wiley-Interscience Series in Discrete Mathematics and Optimization. 
+\end{thebibliography}
+  
+  
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

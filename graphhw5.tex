@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{pgf,tikz,tikzscale} 
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{enumerate}	
+\usepackage{graphicx,lipsum,pgfplots} 
+\usepackage{amsmath, amsthm}                 
+\usepackage[top=1in,bottom=1in, left=1in, right=1in] {geometry}  
+\usepackage{fancyhdr}       
+\usepackage{blkarray}
+
+
+\pagestyle{fancy}              
+\lhead{Math 5563 \newline Graph Theory HW5, Ch4}   
+\rhead{Warren Keil}
+
+
+
+
+
+
+
+\begin{document}
+\setlength{\parindent}{0cm}   %%%%%%%% KEEP THIS  for block style paragraphs. 
+
+
+
+%\textbf{11a.}  Suppose \(G\) is a graph on \(n\leq5\) vertices such that \(G\) is not coplanar. Prove that \(G=K_5\) or \(G=K_5^c\). 
+
+
+%\vspace{3mm}
+%\textit{Proof.} Let \(G\) be a graph on \(n\leq5\) vertices such that \(G\) is not coplanar. 
+
+\textbf{11b.} Exhibit a coplanar graph \(G\) on 6 vertices such that both \(G\) and its complement are connected. 
+
+\vspace{3mm}
+\textit{Solution.} Observe the graph of \(G\) and its complement below. 
+
+
+\vspace{60mm}
+
+\textbf{14a.} Let \(G=P_3 \vee C_4\). Prove that \(G\) is not planar. 
+
+\vspace{3mm}
+\textit{Proof.} Let \(G=P_3 \vee C_4\). Recall Theorem 4.19 that states, 
+\[
+\gamma(G) \geq \frac m6 - \frac n2 + 1
+\]
+where \(\gamma(G)\) is the genus of \(G\), the minimum number of overpasses required to embed \(G\) into a surface. We notice that \(G\) has 7 vertices, and \(P_3\) and \(C_4\) have a combined 6 edges before we join them. After we join these graphs to construct \(G\), we have to add 12 edges to end up with 18 edges. Thus, 
+\begin{align*}
+\gamma(G) &\geq \frac{18}{6} - {7}{2} +1 \\
+&=3- 3.5 + 1\\
+&= .5
+\end{align*}
+And since \(\gamma(G) \geq .5\), then we know \(G\) cannot be planar since the genus of any planar graph is zero. 
+\begin{flushright}
+\(\qed\)
+\end{flushright}
+
+
+
+
+
+
+
+\end{document}

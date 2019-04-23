@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{pgf,tikz,tikzscale} 
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{enumerate}	
+\usepackage{graphicx,lipsum,pgfplots} 
+\usepackage{amsmath, amsthm}                 
+\usepackage[top=1in,bottom=1in, left=1in, right=1in] {geometry}  
+\usepackage{fancyhdr}       
+\usepackage{blkarray}
+
+
+\pagestyle{fancy}              
+\lhead{Math 5563 \newline Graph Theory HW2, Ch1}   
+\rhead{Warren Keil}
+
+
+
+
+
+
+
+\begin{document}
+\setlength{\parindent}{0cm}   %%%%%%%% KEEP THIS  for block style paragraphs. 
+
+
+\textbf{5} Prove that \(\omega\) and \(\alpha\) are graph invariants. 
+
+
+\vspace{2mm}
+
+\textit{Proof that \(\omega\) is invariant.} Let \(G= (V,E)\) and \(H=(V',E')\) be graphs such that \(G \cong H\). Let \(f:V\rightarrow V'\) be an isomorphism. Suppose \(\omega(G) = n\). Then this means that the largest clique in \(G\) has \(n\) vertices. Let \(C=\{v_1, v_2,\cdots, v_n\}\) be the set of vertices for a largest clique in \(G\). (We say \textit{a} largest clique to imply that there could be multiple largest cliques. WLOG, proving for one still proves the theorem for all). By the definition of a clique, these vertices are all pairwise connected and isomorphic to \(K_n\). Then let \(C'=\{f(v_1), f(v_2), \cdots, f(v_n)\}  \) be the set \(\{f(v) : v\in C\}\). Since every \(v\in C\) is pairwise adjacent to every other vertex in \(C\), and since \(f\) is an isomorphism from \(G\) to \(H\) then it follows that every vertex in \(C'\) must be pairwise adjacent. And since \(f\) is one to one, then \(C'\) must contain precisely \(n\) vertices. Thus, the vertices of \(C'\) form a clique in \(H\). To show that this must be a largest clique in \(H\), we will show via contradiction that there cannot be a larger clique in \(H\). So assume there exists a larger clique in \(H\). Let \(C''\) be the set of vertices in this larger clique. Then \( C'' =\{v'_1,v'_2, \cdots,v'_m\} \subseteq V' \) where \( m>n\). And since \(f\) is bijective, there exists a unique \(u \in V\) for each \(v' \in C''\). Thus we can write \(C''=\{f(u_1), \cdots f(u_m)\} \). Since each vertex in \(C'' \) is pairwise adjacent and  \(f\) is an isomorphism, then every vertex in the set \( \{ u : f(u) \in C''\}\) must also be adjacent by the properties of a graph isomorphism. Thus the set \( \{ u : f(u) \in C''\}\) is a clique in \(G\) and has \(m\) vertices \( \rightarrow\!\leftarrow \). But this contradicts our assumption that the largest clique in \(G\) had \(n\) vertices. Thus the largest clique in \(H\) must also have \(n \) vertices. Thus the clique number of \(H, \omega(H)=n\). \(\therefore \omega\) is a graph invariant. 
+
+\begin{flushright}
+\(\blacksquare\)
+\end{flushright}
+
+
+
+\textit{Proof that \(\alpha \) is invariant}. Let \(G= (V,E)\) and \(H=(V',E')\) be graphs such that \(G \cong H\). Let \(f:V\rightarrow V'\) be an isomorphism. Suppose the independence number of \(G\),   \( \alpha(G)=n\). Then it follows that \(\omega(G^c) = n \) since by the definition of \(\alpha(G) = \omega(G^c)=n \).  And since it is trivially shown that \( G \cong H \iff G^c \cong H^c \), then we can use the fact that \( \omega(G^c)=n \iff \omega(H^c) = n \) since we proved that \( \omega \) is a graph invariant. And by the definition of independence number, \( \alpha(H) =  \omega(H^c) = n \). \(\therefore\) \( \alpha \) is a graph invariant. 
+
+\begin{flushright}
+\(\blacksquare\)
+\end{flushright}
+
+
+
+\end{document}
